@@ -5,7 +5,7 @@ import { Bubble } from "./styles";
 const ChatBubble = ({ chats }: ChatBubbleProps) => {
   return (
     <Bubble isResponse={chats.isResponse}>
-      <FreeText message={chats.message} timestamp={chats.timestamp} />
+      <FreeText message={chats.text} timestamp={chats.timestamp} />
     </Bubble>
   );
 };

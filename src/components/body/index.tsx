@@ -1,10 +1,17 @@
 import ChatBubble from "components/chat-bubble";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "redux/reducers";
 import { ChatsRenderer, Wrapper } from "./styles";
+import { useEffect } from "react";
+import { fetchHistory } from "redux/thunks";
 
 const Body = () => {
   const chats = useSelector((state: RootState) => state.chats);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchHistory(undefined));
+  }, []);
 
   return (
     <Wrapper>

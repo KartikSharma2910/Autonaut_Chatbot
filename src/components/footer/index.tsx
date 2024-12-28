@@ -13,7 +13,7 @@ const Footer = () => {
     e.preventDefault();
     if (value === "") return;
     dispatch(
-      addChat({ message: value, isResponse: false, timestamp: Date.now() })
+      addChat({ text: value, isResponse: false, timestamp: Date.now() })
     );
     setValue("");
   };
